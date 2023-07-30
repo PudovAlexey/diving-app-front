@@ -9,14 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.0",
+    "@three-ts/orbit-controls": "^1.4.7",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "i18next": "^23.2.9",
+    "jotai": "^2.2.2",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^13.0.2",
+    "three": "^0.154.0",
+    "threejs-object-controls": "^1.2.8",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/dat.gui": "^0.7.10",
+    "dat.gui": "^0.7.9"
   }
 }
