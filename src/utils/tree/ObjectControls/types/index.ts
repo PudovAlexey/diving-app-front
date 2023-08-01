@@ -1,5 +1,3 @@
-import { type } from "os"
-
 type ObjectControls = {
     setZoomSpeed: (value: number) => void
     enableVerticalRotation: () => void
