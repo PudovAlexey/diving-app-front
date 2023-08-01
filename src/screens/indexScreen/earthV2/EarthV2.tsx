@@ -63,6 +63,7 @@ const Root = styled(Box)({
   height: EARTH_CONSTS.SIZE,
   width: EARTH_CONSTS.SIZE,
   position: "relative",
+  flex: 'none',
 });
 
 const CanvasBox = styled(Box)((theme: { isLoading: boolean }) => {
