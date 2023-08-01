@@ -1,12 +1,11 @@
 import { Points } from "@src/types/geo";
 import { atom } from "jotai";
-import { getSliceById } from "./utils/utils";
-import { serialize } from "v8";
 import { EarthController } from "@src/screens/indexScreen/earthV2/EarthController";
 
 const initialState = {
   points: atom<Points>([]),
-  earthControl: atom(null),
+  earthControl: atom<EarthController | null>(null),
+  isCanvasLoading: atom<boolean>(true),
 };
 
 export const earthSlice = {
@@ -24,8 +23,13 @@ export const earthSlice = {
       ) => {
         const earth = new EarthController(args.canvasElement);
         set(earthSlice.state.points, args.points);
-        earth.init();
         set(earthSlice.state.earthControl, earth);
+
+        earth.subscribe("isLoading", (isLoading) => {
+          if (!isLoading) {
+            set(earthSlice.state.isCanvasLoading, false);
+          }
+        });
       }
     ),
     onAddPoints: atom(
@@ -41,12 +45,13 @@ export const earthSlice = {
         const earthControl = get(earthSlice.state.earthControl);
 
         const newPoints = points.concat(args.points);
-        console.log(earthControl, 'POINTS')
-        earthControl.addMarkers(newPoints);
+        if (earthControl) earthControl.addMarkers(newPoints);
         set(earthSlice.state.points, newPoints);
       }
     ),
     onExit: atom(null, (get, set) => {
+      const earthControl = get(earthSlice.state.earthControl);
+      if (earthControl) earthControl.onExit();
       earthSlice.state = initialState;
     }),
   },
