@@ -1,9 +1,9 @@
-import { Earth } from "@src/screens/indexScreen/earth/Earth";
+import { Earth } from "@src/pages/screens/indexScreen/earth/Earth"
 
 export default function Test() {
-    return (
-        <div>
-            <Earth/>
-        </div>
-    )
+	return (
+		<div>
+			<Earth />
+		</div>
+	)
 }

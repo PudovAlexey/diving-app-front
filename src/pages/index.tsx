@@ -1,5 +1,5 @@
-import { IndexScreen } from "@src/screens/indexScreen/IndexScreen";
+import { IndexScreen } from "@src/pages/screens/indexScreen/IndexScreen"
 
 export default function Index() {
-  return <IndexScreen />;
+	return <IndexScreen />
 }
