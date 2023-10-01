@@ -11,21 +11,36 @@ export type InputProps = Omit<MuiInputProps, "size"> & {
 	size?: "56" | "44" | "32" | "24"
 	label?: LabelComponentProps["label"]
 	validationText?: LabelComponentProps["validationText"]
-	validationStatus?: LabelComponentProps['validationStatus']
+	validationStatus?: LabelComponentProps["validationStatus"]
 }
 
 function Input(props: InputProps) {
-	const { size, label, required, validationText, validationStatus, ...otherProps } = props
+	const {
+		size,
+		label,
+		required,
+		validationText,
+		validationStatus,
+		...otherProps
+	} = props
 	const InputComponent = StyledInput(size)
 
 	return (
-		<LabelComponent validationText={validationText} validationStatus={validationStatus} required={required} label={label}>
+		<LabelComponent
+			validationText={validationText}
+			validationStatus={validationStatus}
+			required={required}
+			label={label}
+		>
 			<InputComponent required={required} {...otherProps} />
 		</LabelComponent>
 	)
 }
 
 const StyledInput = (size: InputProps["size"]) =>
-	styled(MuiInput)(({}) => InputBySize(size))
+	styled(MuiInput)(({ theme }) => ({
+		...InputBySize(size),
+		color: theme.palette.primary.contrastText,
+	}))
 
 export { Input }
