@@ -18,8 +18,8 @@ function RegisterScreen() {
 					width='100%'
 					direction='row'
 				>
-					<Button>Войти</Button>
 					<Button>Забыл пароль</Button>
+					<Button>Войти</Button>
 				</Stack>
 			</Stack>
 		</RegisterWrapper>
