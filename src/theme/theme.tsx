@@ -42,47 +42,8 @@ const theme = createTheme({
 		},
 		MuiTypography: {
 			styleOverrides: {
-				h1: ({ theme }) => ({
-					color: theme.palette.primary.light,
-					fontSize: "64px",
-					fontStyle: "normal",
-					fontWeight: "700",
-					lineHeight: "109px",
-				}),
-				h2: ({ theme }) => ({
-					color: theme.palette.primary.light,
-					fontSize: "48px",
-					fontStyle: "normal",
-					fontWeight: "700",
-					lineHeight: "76px",
-				}),
-				h3: ({ theme }) => ({
-					color: theme.palette.primary.light,
-					fontSize: "40px",
-					fontStyle: "normal",
-					fontWeight: "700",
-					lineHeight: "64px",
-				}),
-				h4: ({ theme }) => ({
-					color: theme.palette.primary.light,
-					fontSize: "32px",
-					fontStyle: "normal",
-					fontWeight: "700",
-					lineHeight: "52px",
-				}),
-				h5: ({ theme }) => ({
-					color: theme.palette.primary.light,
-					fontSize: "24px",
-					fontStyle: "normal",
-					fontWeight: "700",
-					lineHeight: "41px",
-				}),
-				h6: ({ theme }) => ({
-					color: theme.palette.primary.light,
-					fontSize: "18px",
-					fontStyle: "normal",
-					fontWeight: "700",
-					lineHeight: "32px",
+				root: ({ theme }) => ({
+					color: theme.palette.primary.contrastText,
 				}),
 			},
 		},

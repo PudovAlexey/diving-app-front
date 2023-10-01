@@ -1,16 +1,19 @@
 import { Body } from "./Body/Body"
 import { Heading } from "./Heading/Heading"
 import { Caption } from "./Caption/Caption"
-import {bodySize} from './Body/body'
-import { bodySize } from "./Body/body"
+
+import { size as bodySize } from "./Body/body"
+import { size as captionSize } from "./Caption/caption"
+import { size as headingSize } from "./Heading/heading"
 
 export const Typography = {
 	Body,
 	Heading,
 	Caption,
-}
 
-export const typographyData = {
-  bodySize,
-
+	sizes: {
+		bodySize,
+		captionSize,
+		headingSize,
+	},
 }

@@ -6,3 +6,5 @@ const typographyTypes = {
 		fontFamily: "Raleway",
 	},
 }
+
+export { typographyTypes }

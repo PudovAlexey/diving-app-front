@@ -1,4 +1,4 @@
-const captionSize = {
+const size = {
 	"1": {
 		fontSize: "16px",
 		fontStyle: "normal",
@@ -28,4 +28,4 @@ const captionSize = {
 	},
 }
 
-export { captionSize }
+export { size }

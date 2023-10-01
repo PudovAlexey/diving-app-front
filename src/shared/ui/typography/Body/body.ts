@@ -1,4 +1,4 @@
-const bodySize = {
+const size = {
 	"1": {
 		fontSize: "16px",
 		fontStyle: "normal",
@@ -28,4 +28,4 @@ const bodySize = {
 	},
 }
 
-export {bodySize}
+export {size}

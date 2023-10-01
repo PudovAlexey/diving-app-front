@@ -1,18 +1,19 @@
 import { Typography, TypographyProps } from "@mui/material"
-import { captionSize } from "./caption"
+import { typographyTypes } from "../typographyTypes"
+import { size } from "./caption"
 import React from "react"
 
-type HeadingProps = Omit<TypographyProps, "variant"> & {
-	variant: "1" | "2" | "3" | "4"
-	fontType: "primary" | "secondary"
+export type CaptionProps = Omit<TypographyProps, "variant"> & {
+	variant?: "1" | "2" | "3" | "4"
+	fontType?: "primary" | "secondary"
 }
 
-function Caption(props: HeadingProps) {
-	const { fontType = 'primary', variant, ...otherProps } = props
+function Caption(props: CaptionProps) {
+	const { fontType = "primary", variant = 2, ...otherProps } = props
 
 	return (
 		<Typography
-			sx={{ ...typographyTypes[fontType], ...captionSize[variant] }}
+			sx={{ ...typographyTypes[fontType], ...size[variant] }}
 			{...otherProps}
 		/>
 	)

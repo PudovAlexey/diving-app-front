@@ -1,15 +1,16 @@
 import { Typography, TypographyProps } from "@mui/material"
+import { size } from './heading';
 import React from "react"
 
 type HeadingProps = Omit<TypographyProps, "variant"> & {
-	variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+	variant: "1" | "2" | "3" | "4" | "5" | "6"
 	fontType: "primary" | "secondary"
 }
 
 function Heading(props: HeadingProps) {
-	const { fontType = 'secondary', ...otherProps } = props
+	const { fontType = 'secondary', variant, ...otherProps } = props
 
-	return <Typography sx={{ ...typographyTypes[fontType] }} {...otherProps} />
+	return <Typography sx={{ ...typographyTypes[fontType], ...size[variant] }} {...otherProps} />
 }
 
 export { Heading }

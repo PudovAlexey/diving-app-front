@@ -1,5 +1,5 @@
 import { Typography, TypographyProps } from "@mui/material"
-import { bodySize } from './body'
+import { size } from './body'
 import React from "react"
 
 type HeadingProps = Omit<TypographyProps, "variant"> & {
@@ -12,7 +12,7 @@ function Body(props: HeadingProps) {
 
 	return (
 		<Typography
-			sx={{ ...typographyTypes[fontType], ...bodySize[variant] }}
+			sx={{ ...typographyTypes[fontType], ...size[variant] }}
 			{...otherProps}
 		/>
 	)
