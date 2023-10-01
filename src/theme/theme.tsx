@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material"
 const theme = createTheme({
 	palette: {
 		primary: {
-			light: "rgba(255, 255, 255, 1)",
+			light: "rgba(255, 255, 255, 0.08)",
 			main: "#000214",
 			dark: "rgba(255, 255, 255, 0.06)",
 			contrastText: "rgba(255, 255, 255, 1)",
@@ -35,7 +35,6 @@ const theme = createTheme({
 			styleOverrides: {
 				root: ({ hteme }) => ({
 					background: theme.palette.primary.dark,
-					borderRadius: "12px",
 					color: theme.palette.primary.light,
 				}),
 			},
