@@ -10,15 +10,17 @@ import {
 export type InputProps = Omit<MuiInputProps, "size"> & {
 	size?: "56" | "44" | "32" | "24"
 	label?: LabelComponentProps["label"]
+	validationText?: LabelComponentProps["validationText"]
+	validationStatus?: LabelComponentProps['validationStatus']
 }
 
 function Input(props: InputProps) {
-	const { size, label, ...otherProps } = props
+	const { size, label, required, validationText, validationStatus, ...otherProps } = props
 	const InputComponent = StyledInput(size)
 
 	return (
-		<LabelComponent label={label}>
-			<InputComponent {...otherProps} />
+		<LabelComponent validationText={validationText} validationStatus={validationStatus} required={required} label={label}>
+			<InputComponent required={required} {...otherProps} />
 		</LabelComponent>
 	)
 }
