@@ -1,10 +1,14 @@
 import { ThemeProvider } from "@emotion/react";
+import { queryClient } from "@src/app/modal/queryClient/queryClient";
 import { Footer } from "@src/components/Footer";
 import { Header } from "@src/components/header/Header";
 import { en } from "@src/locales/en";
 import { ru } from "@src/locales/ru";
 import { Layout } from "@src/theme/layout/Layout";
 import { theme } from "@src/theme/theme";
+import {
+  QueryClientProvider,
+} from '@tanstack/react-query'
 // import { i18n } from "@src/i18n/config";
 
 import i18n from "i18next";
@@ -23,9 +27,9 @@ i18n.use(initReactI18next).init({
   },
 });
 
-function MyApp({ router, Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <Layout>
           <Header />
@@ -33,7 +37,7 @@ function MyApp({ router, Component, pageProps }) {
           <Footer />
         </Layout>
       </ThemeProvider>
-    </>
+      </QueryClientProvider>
   );
 }
 export default MyApp;

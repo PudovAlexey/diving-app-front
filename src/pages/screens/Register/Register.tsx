@@ -8,7 +8,7 @@ const { Input } = ui
 
 function RegisterScreen() {
 	return (
-		<RegisterWrapper>
+		<Root>
 			<Paper width={"50vw"}>
 				<Stack alignItems={'center'} spacing={5} direction={'row'}>
 					<Box>Тут картиночка</Box>
@@ -34,11 +34,11 @@ function RegisterScreen() {
 					</Stack>
 				</Stack>
 			</Paper>
-		</RegisterWrapper>
+		</Root>
 	)
 }
 
-const RegisterWrapper = styled(Box)(() => ({
+const Root = styled(Box)(() => ({
 	display: "flex",
 	justifyContent: "center",
 	alignItems: "center",
