@@ -1,5 +1,5 @@
 import React from "react"
-import { RegisterScreen } from "./screens/Register/Register"
+import { RegisterScreen } from "./screens/Register/ui/Register"
 
 function Register() {
 	return <RegisterScreen />

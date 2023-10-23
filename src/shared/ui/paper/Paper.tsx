@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 import { Paper as MuiPaper, PaperProps as MuiPaperProps } from "@mui/material"
 import { getSize } from "@src/shared/lib/mui/getSize"
 import { size } from "./size"
-import React from "react"
+import React, { useMemo } from "react"
 
 export type PaperProps = MuiPaperProps & {
 	width?: string | number
@@ -12,7 +12,7 @@ export type PaperProps = MuiPaperProps & {
 function Paper(props: PaperProps) {
 	const { children, width, size = "medium", ...otherProps } = props
 
-	const PaperComponent = StyledPaper(size)
+	const PaperComponent = useMemo(() => StyledPaper(size), [size]);
 
 	const innerWidth = getSize(width)
 	return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Input as MuiInput, InputProps as MuiInputProps } from "@mui/material";
 import styled from "@emotion/styled";
 import { InputBySize } from "./InputBySize";
@@ -23,7 +23,7 @@ function Input(props: InputProps) {
     validationStatus,
     ...otherProps
   } = props;
-  const InputComponent = StyledInput(size);
+  const InputComponent = useMemo(() => StyledInput(size), [size]);
 
   return (
     <LabelComponent
